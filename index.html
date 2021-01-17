@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="./assets/css/stylesheet.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Timed Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <script src="./assets/js/javascript.js"></script>
-    </header>
-    <!--Make the container box where the quiz goes in-->
-    <div class="container">
-        <div class="interface">
-        <h1>Start Quiz?</h1>
-        <button id="start" onclick="setStage()">Start!</button>
-        </div>
+    <h1 id="timer"></h1>
+    <div id="interface">
+        <button id="startQuiz" onclick="setStage()">Start</button>
     </div>
+
+    <script src="assets/js/javascript.js"></script>
 </body>
 </html>

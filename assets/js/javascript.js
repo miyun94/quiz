@@ -1,14 +1,6 @@
 let currQuestion = 0;
 let question = [
     {
-        question: "Which is the correct HTML element to link the Javascript file?",
-        choiceA: "<p>",
-        choiceB: "<img src",
-        choiceC: "<script>",
-        correctAnswer: "C"
-    },
-
-    {
         question: "Which syntax would create a for loop?",
         choiceA: "(i=0, i > .length; i++)",
         choiceB: "(i=0; i < .length; i++)",
@@ -56,7 +48,7 @@ let score = 0
 // When start button is clicked, timer and quiz starts
 function timer() {
     let timer = document.getElementById('timer')
-    timeLeft = 200;
+    timeLeft = 100;
     let ticker = setInterval(function () {
         timer.innerHTML = timeLeft;
         if (timeLeft > 0) {
@@ -66,7 +58,7 @@ function timer() {
             $("#interface").html(`<h2>Time Up!</h2>`);
         }
 
-        if (currQuestion == question.length) {
+        if (currQuestion === question.length) {
             clearInterval(ticker);
         }
 
@@ -92,7 +84,10 @@ function checkAnswer(answer) {
             timeLeft == 0;
         }
     }
+//Make sure if timer runs out then game over
 
+
+//Save best score with local storage
     if (currQuestion < question.length - 1) {
         currQuestion++;
         changeQuestion();
@@ -103,7 +98,14 @@ function checkAnswer(answer) {
             <p>Best Score: ${localStorage.getItem('currBest')}`);
     }
 }
-    // Game over when all questions or answered or timer reaches 0
+function saveScore() {
+    if (localStorage.getItem('currBest') && localStorage.getItem('currBest') > timeLeft) {
+        localStorage.setItem('currBest', timeLeft);
+    }
+}
 
-    // Use localstorage to save initials and scores
-
+function setStage() {
+    timer();
+    currQuestion = 0;
+    changeQuestion();
+}
