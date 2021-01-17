@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+/*#77e6c6*/
+.container {
+    width: 100w;
+    height: 100w;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.startquiz {
+    background-color: teal;
+    color: thistle;
+}
+
+.start {
+    
+}
+ 
