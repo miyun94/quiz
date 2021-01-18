@@ -1,3 +1,4 @@
+//Set gloabl assignments here 
 let currQuestion = 0;
 let question = [
     {
@@ -48,7 +49,7 @@ let score = 0
 // When start button is clicked, timer and quiz starts
 function timer() {
     let timer = document.getElementById('timer')
-    timeLeft = 100;
+    timeLeft = 50;
     let ticker = setInterval(function () {
         timer.innerHTML = timeLeft;
         if (timeLeft > 0) {
@@ -58,9 +59,9 @@ function timer() {
             $("#interface").html(`<h2>Time Up!</h2>`);
         }
 
-        if (currQuestion === question.length) {
-            clearInterval(ticker);
-        }
+        //if (currQuestion === question.length) {
+          //  clearInterval(ticker);
+        //}
 
     }, 1000)
 }
@@ -88,7 +89,7 @@ function checkAnswer(answer) {
 
 
 //Save best score with local storage
-    if (currQuestion < question.length - 1) {
+    if (currQuestion < question. length - 1) {
         currQuestion++;
         changeQuestion();
     } else {
